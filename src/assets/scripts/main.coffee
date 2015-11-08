@@ -43,6 +43,10 @@ $(document).on('ready', () ->
       .attr('step', maxVal/100.0)
   )
 
+  $(document).on('change', '#samples, #dimensions', () ->
+   refreshGraphs()
+  )
+
   timeSeriesGraph = null
   freqSeriesGraph = null
   phaseSeriesGraph = null
