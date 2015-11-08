@@ -34,6 +34,13 @@ class Series
     @fft = new FFT($dimensions, $dimensions)
     @fft.forward(timeSeries)
 
+    @fft.real = @fft.real.map(Math.abs)
+
+    fftmp = []
+    @fft.real.forEach((ele, idx, ary) ->
+      fftmp.push(ary[(idx+($dimensions/2))%$dimensions])
+    )
+    @fft.real = fftmp
 
   getTimeSeries: () ->
     if(not @timeSeries)

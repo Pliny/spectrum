@@ -8,7 +8,7 @@ $(document).on('ready', () ->
   refreshGraphs = () ->
     timeSeriesGraph.series[0].setData(series.createTimeSeries())
     freqSeriesGraph.series[0].setData(series.getFreqSeries())
-    phaseSeriesGraph.series[0].setData(series.getPhaseSeries())
+    phaseSeriesGraph.series[0].setData(series.getPhaseSeries()) if phaseSeriesGraph isnt null
 
 
   $('.freq-slider')
@@ -137,7 +137,7 @@ $(document).on('ready', () ->
         radius : 1
       },
       color: '#90ed7d',
-      lineWidth: 6,
+      lineWidth: 2,
       name: "Sample",
       data: series.getFreqSeries()
     }]
