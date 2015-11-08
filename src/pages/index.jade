@@ -20,25 +20,25 @@ block content
   #sinusoids
     .row
       .col-sm-6.col-md-1
-        label="Amplitude"
       .col-sm-6.col-md-1
-        label="Frequency"
       .col-sm-6.col-md-1
-        label="Phase"
       .col-sm-6.col-md-1
-        label="Shift"
     .sinusoid(data-idx=0)
       .row
         .col-sm-6.col-md-1
+          label="Amplitude"
           input.form-control.knobs.amplitude(type="text" value="1" data-for=".amp-slider")
           input.form-control.slider.amp-slider(type="range" min="0" max="10" step="0.5" data-for=".amplitude")
         .col-sm-6.col-md-1
+          label="Frequency"
           input.form-control.knobs.freq(type="text" value="2" data-for=".freq-slider")
           input.form-control.slider.freq-slider(type="range" min="0" max="64" step="0.5" data-for=".freq")
         .col-sm-6.col-md-1
+          label="Phase"
           input.form-control.knobs.phase(type="text" value="0" data-for=".phase-slider")
           input.form-control.slider.phase-slider(type="range" min="0" max="6.2857142857" step="0.4" data-for=".phase")
         .col-sm-6.col-md-1
+          label="Shift"
           input.form-control.knobs.shift(type="text" value="0" data-for=".shift-slider")
           input.form-control.slider.shift-slider(type="range" min="-3" max="3" step="0.25" data-for=".shift")
         .col-sm-6.col-md-1
