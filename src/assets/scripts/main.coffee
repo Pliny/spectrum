@@ -137,7 +137,7 @@ $(document).on('ready', () ->
         radius : 1
       },
       color: '#90ed7d',
-      lineWidth: 2,
+      lineWidth: 3,
       name: "Sample",
       data: series.getFreqSeries()
     }]
@@ -184,7 +184,7 @@ $(document).on('ready', () ->
         radius : 1
       },
       color: '#f7a35c',
-      lineWidth: 6,
+      lineWidth: 3,
       name: "Sample",
       data: series.getPhaseSeries()
     }]

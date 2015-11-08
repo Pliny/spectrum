@@ -23,6 +23,17 @@ class Series
       )(num) for num in [0..($samples-1)]
     )
 
+  _standardize: (fftary) ->
+    retval = fftary.map(Math.abs)
+    length = fftary.length
+
+    tmp = []
+    retval.forEach((ele, idx, ary) ->
+      tmp.push(ary[(idx + (length/2)) % length])
+    )
+    retval = tmp
+    retval
+
   _createFFT: () ->
     $samples = parseInt($('#samples').val())
     $dimensions = parseInt($('#dimensions').val())
@@ -34,13 +45,8 @@ class Series
     @fft = new FFT($dimensions, $dimensions)
     @fft.forward(timeSeries)
 
-    @fft.real = @fft.real.map(Math.abs)
-
-    fftmp = []
-    @fft.real.forEach((ele, idx, ary) ->
-      fftmp.push(ary[(idx+($dimensions/2))%$dimensions])
-    )
-    @fft.real = fftmp
+    @fft.real = @_standardize(@fft.real)
+    @fft.imag = @_standardize(@fft.imag)
 
   getTimeSeries: () ->
     if(not @timeSeries)
