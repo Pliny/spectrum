@@ -3,14 +3,11 @@ extends ./includes/template.jade
 block content
   #discrete-values
     .row
-      .col-xs-1
+      .col-sm-6.col-md-1
         label(for="samples")="Samples"
-      .col-xs-1
-        label(for="dimensions")="Dimensions"
-    .row
-      .col-xs-1
         input.form-control(type="text" name="samples" id="samples" placeholder="samples" value="64")
-      .col-xs-1
+      .col-sm-6.col-md-1
+        label(for="dimensions")="Dimensions"
         input.form-control(type="text" name="dimensions" id="dimensions" placeholder="dimensions" value="1024")
   #visuals
     .row
@@ -22,36 +19,31 @@ block content
         #phase-graph
   #sinusoids
     .row
-      .col-xs-1
+      .col-sm-6.col-md-1
         label="Amplitude"
-      .col-xs-1
+      .col-sm-6.col-md-1
         label="Frequency"
-      .col-xs-1
+      .col-sm-6.col-md-1
         label="Phase"
-      .col-xs-1
+      .col-sm-6.col-md-1
         label="Shift"
     .sinusoid(data-idx=0)
       .row
-        .col-xs-1
+        .col-sm-6.col-md-1
           input.form-control.knobs.amplitude(type="text" value="1" data-for=".amp-slider")
-        .col-xs-1
+          input.form-control.slider.amp-slider(type="range" min="0" max="10" step="0.5" data-for=".amplitude")
+        .col-sm-6.col-md-1
           input.form-control.knobs.freq(type="text" value="2" data-for=".freq-slider")
-        .col-xs-1
+          input.form-control.slider.freq-slider(type="range" min="0" max="64" step="0.5" data-for=".freq")
+        .col-sm-6.col-md-1
           input.form-control.knobs.phase(type="text" value="0" data-for=".phase-slider")
-        .col-xs-1
+          input.form-control.slider.phase-slider(type="range" min="0" max="6.2857142857" step="0.4" data-for=".phase")
+        .col-sm-6.col-md-1
           input.form-control.knobs.shift(type="text" value="0" data-for=".shift-slider")
-        .col-xs-1
+          input.form-control.slider.shift-slider(type="range" min="-3" max="3" step="0.25" data-for=".shift")
+        .col-sm-6.col-md-1
           a#new-function
             span.glyphicon.glyphicon-plus
-      .row
-        .col-xs-1
-          input.form-control.slider.amp-slider(type="range" min="0" max="10" step="0.5" data-for=".amplitude")
-        .col-xs-1
-          input.form-control.slider.freq-slider(type="range" min="0" max="64" step="0.5" data-for=".freq")
-        .col-xs-1
-          input.form-control.slider.phase-slider(type="range" min="0" max="6.2857142857" step="0.4" data-for=".phase")
-        .col-xs-1
-          input.form-control.slider.shift-slider(type="range" min="-3" max="3" step="0.25" data-for=".shift")
   .spacing
   button.btn.btn-primary(type="submit")#graph-it.
     GRAPH
