@@ -18,7 +18,6 @@ class Series
           $amplitude = parseFloat($(ele).find('.amplitude').val())
           $shift     = parseFloat($(ele).find('.shift').val())
           sampleVal += $shift + $amplitude * Math.cos((n * $freq * (2.0*Math.PI/$samples)) + $phase)
-          console.log(sampleVal)
         )
         sampleVal
       )(num) for num in [0..($samples-1)]

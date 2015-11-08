@@ -33,16 +33,25 @@ block content
     .sinusoid(data-idx=0)
       .row
         .col-xs-1
-          input.form-control.amplitude(type="text" value="1")
+          input.form-control.knobs.amplitude(type="text" value="1" data-for=".amp-slider")
         .col-xs-1
-          input.form-control.freq(type="text" value="2")
+          input.form-control.knobs.freq(type="text" value="2" data-for=".freq-slider")
         .col-xs-1
-          input.form-control.phase(type="text" value="0")
+          input.form-control.knobs.phase(type="text" value="0" data-for=".phase-slider")
         .col-xs-1
-          input.form-control.shift(type="text" value="0")
+          input.form-control.knobs.shift(type="text" value="0" data-for=".shift-slider")
         .col-xs-1
           a#new-function
-            .glyphicon.glyphicon-plus
+            span.glyphicon.glyphicon-plus
+      .row
+        .col-xs-1
+          input.form-control.slider.amp-slider(type="range" min="0" max="10" step="0.5" data-for=".amplitude")
+        .col-xs-1
+          input.form-control.slider.freq-slider(type="range" min="0" max="64" step="0.5" data-for=".freq")
+        .col-xs-1
+          input.form-control.slider.phase-slider(type="range" min="0" max="6.2857142857" step="0.4" data-for=".phase")
+        .col-xs-1
+          input.form-control.slider.shift-slider(type="range" min="-3" max="3" step="0.25" data-for=".shift")
   .spacing
   button.btn.btn-primary(type="submit")#graph-it.
     GRAPH
