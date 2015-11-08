@@ -1,0 +1,13 @@
+mixin new-sinusoid(idx)
+  .sinusoid.row(data-idx=attributes.idx)
+    .col-md-1
+      input.amplitude(type="text" name="amplitude" placeholder="Amplitude" value="1")
+    .col-md-1
+      input.freq(type="text" name="freq" placeholder="Frequency" value="2")
+    .col-md-1
+      input.phase(type="text" name="phase" placeholder="Phase" value="0")
+    .col-md-1
+      input.shift(type="text" name="shift" placeholder="Shift" value="0")
+    .col-md-2
+      a#new-function.glyphicon.glyphicon-plus-sign
+

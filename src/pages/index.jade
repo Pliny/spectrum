@@ -1,0 +1,49 @@
+include ./includes/mixins.jade
+extends ./includes/template.jade
+block content
+  #discrete-values
+    .row
+      .col-xs-1
+        label(for="samples")="Samples"
+      .col-xs-1
+        label(for="dimensions")="Dimensions"
+    .row
+      .col-xs-1
+        input.form-control(type="text" name="samples" id="samples" placeholder="samples" value="64")
+      .col-xs-1
+        input.form-control(type="text" name="dimensions" id="dimensions" placeholder="dimensions" value="1024")
+  #visuals
+    .row
+      .col-md-4
+        #time-graph
+      .col-md-4
+        #freq-graph
+      .col-md-4
+        #phase-graph
+  #sinusoids
+    .row
+      .col-xs-1
+        label="Amplitude"
+      .col-xs-1
+        label="Frequency"
+      .col-xs-1
+        label="Phase"
+      .col-xs-1
+        label="Shift"
+    .sinusoid(data-idx=0)
+      .row
+        .col-xs-1
+          input.form-control.amplitude(type="text" value="1")
+        .col-xs-1
+          input.form-control.freq(type="text" value="2")
+        .col-xs-1
+          input.form-control.phase(type="text" value="0")
+        .col-xs-1
+          input.form-control.shift(type="text" value="0")
+        .col-xs-1
+          a#new-function
+            .glyphicon.glyphicon-plus
+  .spacing
+  button.btn.btn-primary(type="submit")#graph-it.
+    GRAPH
+
